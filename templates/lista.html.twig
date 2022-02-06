@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+        {% block enlaces %}
+        <!-- navbar -->
+        <nav class="nav nav-masthead">
+          <a class="nav-link active" href="/inicio">Inicio</a>
+          <a class="nav-link" href="/subir">Subir Datos</a>
+          <a class="nav-link" href="/topagents">Estadisticas</a>
+          <a class="nav-link" href="/Eventos">Eventos</a>
+          <a class="nav-link" href="/contacto">Contacto</a>
+          <a class="nav-link" href="/salir" >Cerrar sesion</a>
+        </nav>
+        
+        <!-- navbar -->
+        {% endblock %}
+
+           {% block user %}
+         <br>
+         <br>
+         <img class="image" src="/css/images/person-male--v2.png" width="35px">
+         <h6 class="font-weight-bold masthead-brand">{{session.username}}</h6>
+         {% endblock %}
+
+{% block layout %}
+
+          <main class="inner cover">
+            <div class="container">
+              <div class="row border-bottom" style="height:61vh; overflow-y: scroll;">
+                <!-- tarjeta -->
+                 {% for evento in resultados %}
+                <div class="bg-dark border-secondary card col-md-12 mb-2 pt-2" style="height: 60vh; min-height: 300px;"> 
+                  <div class="card-body pl-0 pr-0">
+                  <h5> Nombre Evento:</h5>
+                    <h5 class="border border-left-0 border-right-0 border-secondary border-top-0 font-weight-bold text-max-lengh">{{evento.getNameEvent}}</h5>
+                    <p class="card-text" style="font-size: 12px;">Descripción:</p>
+                    <p class="card-text" style="font-size: 12px; max-height: 150px; overflow-y: hidden; height:70px;">{{evento.getDescripEvent}}</p>
+                    <p class="card-text" style="font-size: 12px;">Lugar:</p>
+                     <p class="card-text" style="font-size: 12px; max-height: 150px; overflow-y: hidden; height: 70px;">{{evento.getPlaceEvent}}</p>
+                      <a href="/detalle/{{evento.getIdEvent}}"class="btn btn-secondary btn-sm">Agentes</a>
+                       
+                  </div> 
+                  <div class="card-footer mb-2 text-muted">{{evento.getDateEvent | date("d/m/Y")}}</div>
+                   
+                </div>
+                 {% endfor %}
+                <!-- tarjeta end -->
+              </div>
+            </div>
+          </main>
+       
+  {% endblock %}

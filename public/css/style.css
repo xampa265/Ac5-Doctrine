@@ -1,0 +1,388 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 .05rem .1rem rgba(68, 35, 35, 0.5);
+}
+th{
+ width: 350px;
+ }
+ 
+.tabla{
+  margin: auto;
+  text-align: justify;
+}
+
+.image{
+ padding-right: 0.6rem;
+float: left;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+          box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 2rem;
+}
+
+
+/*
+ * Header
+ */
+
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: bold;
+  color: rgba(255,255,255,.5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255,255,255,.25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: rgba(255,255,255,.5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 40em) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 62em) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 42rem;
+  }
+}
+
+.proportions-box-square {
+    position: relative;
+    padding: 100% 0 0 !important;
+    height: 0;
+}
+
+.proportions-box-content {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.background-cover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.background-left-top {
+    background-position: left top;
+}
+
+.background-left-center {
+    background-position: left center;
+}
+
+.background-left-bottom {
+    background-position: left bottom;
+}
+
+.background-right-top {
+    background-position: right top;
+}
+
+.background-right-center {
+    background-position: right center;
+}
+
+.background-right-bottom {
+    background-position: right bottom;
+}
+
+.background-center-top {
+    background-position: center top;
+}
+
+.background-center-center {
+    background-position: center center;
+}
+
+.background-center-bottom {
+    background-position: center bottom;
+}
+
+.border-width-1 {
+    border-width: 1px !important;
+}
+
+.border-width-2 {
+    border-width: 2px !important;
+}
+
+.border-width-3 {
+    border-width: 3px !important;
+}
+
+.border-width-4 {
+    border-width: 4px !important;
+}
+
+.border-width-6 {
+    border-width: 6px !important;
+}
+
+.border-width-8 {
+    border-width: 8px !important;
+}
+
+.border-width-12 {
+    border-width: 12px !important;
+}
+
+.border-width-16 {
+    border-width: 16px !important;
+}
+
+.border-width-24 {
+    border-width: 24px !important;
+}
+
+.image-fit {
+    object-fit: contain;
+    object-position: center center;
+}
+
+.image-fit-left-top {
+    object-position: left top;
+}
+
+.image-fit-left-center {
+    object-position: left center;
+}
+
+.image-fit-left-bottom {
+    object-position: left bottom;
+}
+
+.image-fit-right-top {
+    object-position: right top;
+}
+
+.image-fit-right-center {
+    object-position: right center;
+}
+
+.image-fit-right-bottom {
+    object-position: right bottom;
+}
+
+.image-fit-center-top {
+    object-position: center top;
+}
+
+.image-fit-center-center {
+    object-position: center center;
+}
+
+.image-fit-center-bottom {
+    object-position: center bottom;
+}
+
+.transition {
+    transition: all 0.25s ease-in;
+}
+
+.transition-slow {
+    transition: all 0.5s ease-in;
+}
+
+.transition-very-slow {
+    transition: all 1s ease-in;
+}
+
+.line-height-1 {
+    line-height: 1 !important;
+}
+
+.opacity-100 {
+    opacity: 1 !important;
+}
+
+.opacity-85 {
+    opacity: 0.85 !important;
+}
+
+.opacity-75 {
+    opacity: 0.75 !important;
+}
+
+.opacity-50 {
+    opacity: 0.50 !important;
+}
+
+.opacity-25 {
+    opacity: 0.25 !important;
+}
+
+.opacity-0 {
+    opacity: 0 !important;
+}
+
+.text-max-lengh {
+  margin-top: 0;
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}

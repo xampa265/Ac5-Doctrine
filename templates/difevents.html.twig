@@ -1,0 +1,106 @@
+
+    {% extends "base2.html.twig" %}
+           {% block enlaces %}
+        <!-- navbar -->
+        <nav class="nav nav-masthead">
+          <a class="nav-link active" href="/inicio">Inicio</a>
+          <a class="nav-link" href="/subir">Subir Datos</a>
+          <a class="nav-link" href="/topagents">Estadisticas</a>
+          <a class="nav-link" href="/Eventos">Eventos</a>
+          <a class="nav-link" href="/contacto">Contacto</a>
+          <a class="nav-link" href="/salir" >Cerrar sesion</a>
+        </nav>
+        
+        <!-- navbar -->
+        {% endblock %}
+   
+   
+   
+   
+    {% block layout %}
+
+    <main class="inner cover">
+           
+            <table class="tabla">
+              <tr>
+               <th>Estadisticas</th>
+               <th >Evento </th>
+               <th>Agente</th>
+                <th>LifetimeAP</th>
+                <th>uniquePortalsVisited  </th>
+                <th>resonatorsDeployed</th>
+                <th>linksCreated</th>
+                <th>controlFieldsCreated   </th>
+                <th>xmRecharged</th>
+                <th>portalsCaptured</th>
+                <th>hacks</th>
+                <th>resonatorsDestroyed</th>
+                
+              </tr>
+
+    
+               {% for fila in mayor %}
+
+                <tr>
+                <td>Mayores</td>
+                <td> {{fila.getIdEvent().getIdEvent()}}</td>  
+                  <td> {{fila.getIdAgent.getagentName()}}</td>  
+                  <td>{{fila.getLifetimeAp()}}</td>
+                  <td> {{fila.getUniquePortalsVisited()}}</td>  
+                  <td>{{fila.getResonatorsDeployed()}}</td>
+                  <td> {{fila.getLinksCreated()}}</td> 
+                  <td>{{fila.getControlFieldsCreated()}}</td>
+                  <td> {{fila.getXmRecharged()}}</td> 
+                  <td>{{fila.getPortalsCaptured()}}</td>
+                  <td> {{fila.getHacks()}}</td> 
+                  <td> {{fila.getResonatorsDestroyed()}}</td> 
+                </tr>
+              {% endfor %} 
+
+                 {% for fila in menor %}
+
+                <tr>
+                <td>Menores</td>
+                <td> {{fila.getIdEvent().getIdEvent()}}</td>  
+                  <td> {{fila.getIdAgent.getagentName()}}</td>  
+                  <td>{{fila.getLifetimeAp()}}</td>
+                  <td> {{fila.getUniquePortalsVisited()}}</td>  
+                  <td>{{fila.getResonatorsDeployed()}}</td>
+                  <td> {{fila.getLinksCreated()}}</td> 
+                  <td>{{fila.getControlFieldsCreated()}}</td>
+                  <td> {{fila.getXmRecharged()}}</td> 
+                  <td>{{fila.getPortalsCaptured()}}</td>
+                  <td> {{fila.getHacks()}}</td> 
+                  <td> {{fila.getResonatorsDestroyed()}}</td> 
+                </tr>
+              {% endfor %} 
+         <tr>
+                <td>Diferencia</td>
+                <td> </td>  
+                  <td> </td>  
+                  <td>{{dife.LifetimeAP}}</td>
+                  <td> {{dife.uniquePortalsVisited}}</td>  
+                  <td>{{dife.resonatorsDeployed}}</td>
+                  <td> {{dife.linksCreated}}</td> 
+                  <td>{{dife.controlFieldsCreated}}</td>
+                  <td> {{dife.xmRecharged}}</td> 
+                  <td>{{dife.portalsCaptured}}</td>
+                  <td> {{dife.hacks}}</td> 
+                  <td> {{dife.resonatorsDestroyed}}</td> 
+                </tr>
+
+       
+
+
+   
+
+ </table>
+      
+     
+     
+      
+              <a href="/Eventos" class="btn btn-secondary mt-4">⋘ Eventos</a>
+             
+ 
+         </main>
+     {% endblock %}

@@ -1,0 +1,50 @@
+ 
+        {% extends "base.html.twig" %}
+
+       {% block enlaces %}
+
+       <!-- navbar -->
+       <nav class="nav nav-masthead">
+         <a class="nav-link active" href="/">Inicio</a>
+         <a class="nav-link" href="/login">Login</a>
+    
+       </nav>
+       <!-- navbar -->
+
+       {% endblock %}
+
+
+
+
+        {% block layout %}
+        
+       <main class="inner cover">
+         <form action="" method="post"> 
+
+           <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+           <div class="form-floating">
+        
+             <input type="text" class="form-control" name='agent_name' id="floatingInput" placeholder="username"
+               required>
+             <label for="floatingInput">User Name</label>
+           </div>
+           <div class="form-floating">
+             <input type="password" class="form-control" name='password' id="floatingPassword" placeholder="Password">
+             <label for="floatingPassword">Password</label>
+           </div>
+            <div class="form-floating">
+              <select name="faction" class="form-control">
+              <option value="Resistencia">Resistencia</option>
+              <option value="Iluminados" >Iluminados</option>
+              </select>
+              <label for="floatingPassword">Faccion</label>
+            </div>
+
+
+           <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+           <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+         </form>
+       </main>
+          
+        {% endblock %}

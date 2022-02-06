@@ -1,0 +1,32 @@
+ 
+        {% extends "base.html.twig" %}
+
+        {% block enlaces %}
+
+            <!-- navbar -->
+            <nav class="nav nav-masthead">
+              <a class="nav-link active" href="/">Inicio</a>
+              <a class="nav-link" href="/login">Login</a>
+             
+          </nav>
+            <!-- navbar -->
+
+        {% endblock %}
+        {% block user %}
+        <br>
+        <br>
+        <img class="image" src="/css/images/person-male--v2.png" width="35px">
+        <h6 class="font-weight-bold masthead-brand">{{session.username}}</h6>
+        {% endblock %}
+
+
+        {% block layout %}
+        
+        <main class="inner cover">
+            <h1 class="cover-heading">Bienvenido!</h1>
+            <p class="lead">Date de alta o logeate para disfrutar de la aplicación</p>
+            <p class="lead"> <a href="/register" class="btn btn-lg btn-secondary">New user</a> </p>
+            <p class="lead"> <a href="/login" class="btn btn-lg btn-secondary">    Login   </a> </p>
+          </main>
+          
+        {% endblock %}

@@ -1,0 +1,43 @@
+ 
+        {% extends "base.html.twig" %}
+       
+        {% block enlaces %}
+
+        <!-- navbar -->
+        <nav class="nav nav-masthead">
+          <a class="nav-link active" href="/">Inicio</a>
+          <a class="nav-link" href="/register">Nuevo Usuario</a>
+          
+        </nav>
+        <!-- navbar -->
+
+        {% endblock %}
+       
+
+
+
+        {% block layout %}
+        
+       <main class="inner cover">
+          <form action="" method="post"> 
+
+           <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+           <div class="form-floating">
+        
+             <input type="text" name='agent_name' class="form-control" id="floatingInput" placeholder="username">
+             <label for="floatingInput">User Name</label>
+           </div>
+           <div class="form-floating">
+             <input type="password" name='password' class="form-control" id="floatingPassword" placeholder="Password">
+             <label for="floatingPassword">Password</label>
+           </div>
+            
+        
+
+           <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+          
+         </form>
+       </main>
+          
+        {% endblock %}

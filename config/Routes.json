@@ -1,0 +1,54 @@
+{
+    "/": {
+        "controller": "MainController",
+        "action": "main"
+    },
+    "/login": {
+        "controller": "userController",
+        "action": "loginUsers"
+    },
+     "/register": {
+        "controller": "RegisterController",
+        "action": "registerusers"
+    },
+     "/error": {
+        "controller": "ErrorController",
+        "action": "registererrorusers"
+    }, 
+    "/inicio": {
+        "controller": "InicioController",
+        "action": "wellcomerusers"
+    }, 
+    "/errorpass": {
+        "controller": "ErrorPassController",
+        "action": "passerrorusers"
+    }, 
+    "/salir": {
+        "controller": "SalirController",
+        "action": "exit"
+    }, 
+    "/subir": {
+        "controller": "SubirEstadisticas",
+        "action": "push"
+    }, 
+    "/topagents": {
+        "controller": "TopAgents",
+        "action": "showtopstats"
+    }, 
+    "/Eventos": {
+        "controller": "ListarEventos",
+        "action": "listevents"
+    }, 
+      "/detalle": {
+        "controller": "DetailController",
+        "action": "detalleEvento"
+    },
+     "/evolucion": {
+        "controller": "StatseventsController",
+        "action": "difstats"
+    },
+    "/contacto": {
+        "controller": "Contacto",
+        "action": "contacto"
+    }
+}

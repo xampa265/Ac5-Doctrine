@@ -1,0 +1,55 @@
+ 
+        {% extends "base.html.twig" %}
+
+              {% block enlaces %}
+        <!-- navbar -->
+        <nav class="nav nav-masthead">
+          <a class="nav-link active" href="/inicio">Inicio</a>
+          <a class="nav-link" href="/subir">Subir Datos</a>
+          <a class="nav-link" href="/topagents">Estadisticas</a>
+          <a class="nav-link" href="/Eventos">Eventos</a>
+          <a class="nav-link" href="/contacto">Contacto</a>
+          <a class="nav-link" href="/salir" >Cerrar sesion</a>
+        </nav>
+        
+        <!-- navbar -->
+        {% endblock %}
+
+      {% block user %}
+        <br>
+        <br>
+        <img class="image" src="/css/images/person-male--v2.png" width="35px">
+        <h6 class="font-weight-bold masthead-brand">{{session.username}}</h6>
+      {% endblock %}
+        {% block layout %}
+        
+       <main class="inner cover">
+         <form action="" method="post">
+
+           <h1 class="h3 mb-3 fw-normal">Pega tus datos</h1>
+
+           <div class="form-floating">
+            <textarea id="floatingInput" class="form-control" name="datos" rows="4" cols="50" ></textarea>
+             
+             <br>
+             <br>
+           </div>
+          
+          <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" value="1" id="checkbox4" name="evento">
+              <label class="form-check-label" for="checkbox4">Evento </label>
+          </div>
+
+          <label for="control1">Seleccione un Evento</label>
+          <select class="form-select" id="numEvento" name="NumEvento">
+                 {% for row in eventos %}
+                  <option value="{{row.getIdEvent()}}">{{row.getNameEvent()}}</option>
+                 {% endfor %}
+          </select>
+           <button class="w-100 btn btn-lg btn-primary" type="submit">Subir</button>
+
+           <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+         </form>
+       </main>
+          
+        {% endblock %}

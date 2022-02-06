@@ -1,0 +1,72 @@
+      {% extends "base.html.twig" %}
+
+                {% block enlaces %}
+        <!-- navbar -->
+        <nav class="nav nav-masthead">
+          <a class="nav-link active" href="/inicio">Inicio</a>
+          <a class="nav-link" href="/subir">Subir Datos</a>
+          <a class="nav-link" href="/topagents">Estadisticas</a>
+          <a class="nav-link" href="/Eventos">Eventos</a>
+          <a class="nav-link" href="/contacto">Contacto</a>
+          <a class="nav-link" href="/salir" >Cerrar sesion</a>
+        </nav>
+        
+        <!-- navbar -->
+        {% endblock %}
+
+           {% block user %}
+         <br>
+         <br>
+         <img class="image" src="/css/images/person-male--v2.png" width="35px">
+         <h6 class="font-weight-bold masthead-brand">{{session.username}}</h6>
+         {% endblock %}
+
+
+        {% block layout %}
+        <br>
+        <main class="inner cover">
+            <h3 class="cover-heading">Elige Estadistica</h3>
+            <br>
+            
+             
+             <form action="" method="post">
+            <select name="campo">
+           
+              {% for row in datos %}
+              <option value="{{row}}">{{row}}</option>
+              {% endfor %}
+              
+            </select>
+            <button  type="submit">Select</button>
+           
+            </form>
+            <table class="tabla">
+            <thead>
+              <br>
+             <h4>Lista de mejores agentes ordenados por el campo: {{campo }}</h4>
+              <tr>
+              <th>Nombre Agente</th>
+              {# <th>{{resultados.campo}}</th> #}
+              </thead> 
+          
+             </tr>
+
+                   {% set counter = 0 %} 
+                 {% for fila in resultados  %}
+                 {% set counter = counter + 1 %}
+                <tr>
+                  <td>{{ counter }} -- {{fila.getIdAgent().getagentName()}}</td>
+                   {# <td> {{fila.campo}}</td> #}
+                 </tr>
+
+                 {% endfor %}
+              
+              
+                       
+            </table>
+
+          
+            
+          </main>
+          
+        {% endblock %}

@@ -1,0 +1,83 @@
+
+    {% extends "base.html.twig" %}
+
+        {% block enlaces %}
+        <!-- navbar -->
+        <nav class="nav nav-masthead">
+          <a class="nav-link active" href="/inicio">Inicio</a>
+          <a class="nav-link" href="/subir">Subir Datos</a>
+          <a class="nav-link" href="/topagents">Estadisticas</a>
+          <a class="nav-link" href="/Eventos">Eventos</a>
+          <a class="nav-link" href="/contacto">Contacto</a>
+          <a class="nav-link" href="/salir" >Cerrar sesion</a>
+        </nav>
+        
+        <!-- navbar -->
+        {% endblock %}
+
+    {% block layout %}
+    
+
+    <main class="inner cover">
+           
+            <table class="tabla">
+              <tr>
+               <th>Evento</th>
+                 <th>Nombre evento</th>
+               <th>Agente</th>
+                
+                
+              </tr>
+
+    
+           {% for row in resultados %}
+          <tr>
+            <td>{{row.getIdEvent.getIdEvent}}</td>
+            <td width="1000px"> {{row.getIdEvent.getNameEvent()}}</td>
+            <td > {{row.getIdAgent.getagentName()}}</td> 
+            <td><a href="/evolucion/{{row.getIdEvent.getIdEvent}}/{{row.getIdAgent.getid_agent}}"class="btn btn-secondary btn-sm">Evolucion</a> </td>
+             </tr>
+            
+              
+      {% endfor %}  
+
+
+
+ </table>
+      
+     
+     
+      
+              <a href="/Eventos" class="btn btn-secondary mt-4">⋘ Back</a>
+             
+ 
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+   
+
+     {% endblock %}

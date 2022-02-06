@@ -1,0 +1,24 @@
+ 
+        {% extends "base.html.twig" %}
+              {% block enlaces %}
+        <!-- navbar -->
+        <nav class="nav nav-masthead">
+          <a class="nav-link active" href="/inicio">Inicio</a>
+          <a class="nav-link" href="/subir">Subir Datos</a>
+          <a class="nav-link" href="/topagents">Estadisticas</a>
+          <a class="nav-link" href="/Eventos">Eventos</a>
+          <a class="nav-link" href="/contacto">Contacto</a>
+          <a class="nav-link" href="/salir" >Cerrar sesion</a>
+        </nav>
+        
+        <!-- navbar -->
+        {% endblock %}
+        {% block layout %}
+        
+        <main class="inner cover">
+            <h1 class="cover-heading">{{mensaje}} </h1>
+        
+          </main>
+          
+        {% endblock %}
+        
